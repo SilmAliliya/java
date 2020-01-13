@@ -1,0 +1,170 @@
+Kolekcje i BigInteger, pliki zadania
+
+import java.util.Scanner;
+import java.util.List;
+import java.util.Arrays;
+import java.util.*;
+import java.io.*;
+import java.util.Set;
+import java.util.HashSet;
+public class Main
+{
+public static void main(String[] args) {
+   Scanner obiektKlasyScanner=new Scanner(System.in);    
+    System.out.println("Podaj dane do momentu wpisania ,,koniec'': ");
+    String dane;
+    boolean koniec=false;
+    List<String>zbiordanych = new ArrayList<String>();
+    Set<String> unikalnedane = new HashSet<>();
+
+    do {
+     dane= obiektKlasyScanner.nextLine();
+        if (dane.equals("koniec")) koniec=true;
+       
+else { zbiordanych.add(dane);
+        unikalnedane.add(dane); }
+}
+    while ( koniec!=true);
+
+System.out.println("Liczba wprowadzonych danych: ");
+System.out.println(zbiordanych.size());
+
+System.out.println("Liczba wprowadzonych unikalnych danych: ");
+System.out.println(unikalnedane.size());
+}}
+
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.*;
+public class Main { public static void main(String[] args) throws FileNotFoundException {
+Scanner odczyt = new Scanner(new File("NAPIS.txt"));
+String wiersz;
+List<String> slowa = new ArrayList<>();
+Set<String> podobne = new HashSet<>();
+
+while (odczyt.hasNextLine()){
+wiersz = odczyt.nextLine();
+if (slowa.contains(wiersz)){
+podobne.add(wiersz);
+}
+slowa.add(wiersz);
+}
+System.out.println(podobne);
+}}
+
+
+import java.util.Scanner;
+import java.util.List;
+import java.util.Arrays;
+import java.util.*;
+import java.io.*;
+import java.util.Set;
+import java.util.HashSet;
+public class Main
+{
+public static void main(String[] args) {
+Scanner obiektKlasyScanner=new Scanner(System.in);
+System.out.println("Podaj dane do momentu wpisania ,,koniec'': ");
+String dane;
+boolean koniec=false;
+List<String>zbiordanych = new ArrayList<String>();
+Set<String> unikalnedane = new HashSet<>();
+
+do {
+dane= obiektKlasyScanner.nextLine();
+if (dane.equals("koniec")) koniec=true;
+
+else { if (zbiordanych.contains(dane)) 
+{System.out.println("już jest, czy mam dodać?"); 
+String odp; odp = obiektKlasyScanner.nextLine();
+if (odp.equals("tak")) { zbiordanych.add(dane); unikalnedane.add(dane);}
+                }
+                else {
+zbiordanych.add(dane);
+unikalnedane.add(dane);
+                }
+ }
+}
+while ( koniec!=true);
+
+System.out.println("Liczba wprowadzonych danych: ");
+System.out.println(zbiordanych.size());
+
+System.out.println("Liczba wprowadzonych unikalnych danych: ");
+System.out.println(unikalnedane.size());
+}}
+
+
+import java.io.InputStream;
+import java.net.URL;
+import java.util.Scanner;
+import java.util.Arrays;
+import java.util.*;
+import java.util.Arrays;
+import java.math.BigInteger;
+import java.io.*;
+public class Main {
+   public static void main(String args[]) throws IOException {
+      URL url = new URL("http://www.maciejmuras.com/wp-content/uploads/2018/02/liczby.txt");
+      InputStream inputStream = url.openStream();
+      Scanner odczyt = new Scanner(inputStream);
+              String wiersz; List<String> dane = new ArrayList<String>();
+              
+              BigInteger Liczba2 = new BigInteger("2");
+       BigInteger Liczba8 = new BigInteger("8");
+       
+       List<BigInteger>daneprzez2 = new ArrayList<BigInteger>();
+       List<BigInteger>daneprzez8 = new ArrayList<BigInteger>();
+while(odczyt.hasNextLine())
+        {
+            wiersz=odczyt.nextLine();
+            dane.add(wiersz);
+BigInteger i = new BigInteger(wiersz, 2);
+
+if (i.mod(Liczba2).toString()=="0") daneprzez2.add(i);
+if (i.mod(Liczba8).toString()=="0") daneprzez8.add(i);
+}
+
+System.out.println("ile liczb jest podzielnych przez 2: ");
+System.out.println(daneprzez2.size());
+
+System.out.println("ile liczb jest podzielnych przez 8: ");
+System.out.println(daneprzez8.size());
+
+
+}
+   }
+
+
+import java.io.InputStream;
+import java.net.URL;
+import java.util.Scanner;
+import java.util.Arrays;
+import java.util.*;import java.util.Arrays;
+import java.math.BigInteger;
+import java.io.*;
+public class Main {
+   public static void main(String args[]) throws IOException {
+      URL url = new URL("http://www.maciejmuras.com/wp-content/uploads/2018/02/liczby.txt");
+      InputStream inputStream = url.openStream();
+      Scanner odczyt = new Scanner(inputStream);
+              String wiersz; 
+        List<String> dane = new ArrayList<String>();
+        List<String>dsort = new ArrayList<String>();
+    while(odczyt.hasNextLine())
+        {
+            wiersz=odczyt.nextLine();
+            dane.add(wiersz);
+            dsort.add(wiersz);
+        } 
+Collections.sort(dsort);
+System.out.println("Numer wiersza z najmniejszą liczbą: ");
+System.out.println(dane.indexOf(dsort.get(0))+1);
+System.out.println("Numer wiersza z największą liczbą: ");
+System.out.println(dane.indexOf(dsort.get(999))+1);
+}
+   }
+   
+   
